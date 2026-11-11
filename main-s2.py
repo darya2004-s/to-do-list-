@@ -7,7 +7,25 @@ def show_menu():
     print("3. Complete task")
     print("4. Delete task")
     print("5. Exit")
+    
+def ask_priority():
+    text = input("Priority (default 1): ")
+    if text == "":
+        return 1
+    try:
+        return int(text)
+    except ValueError:
+        return None
 
+
+def handle_add(tasks):
+    title = input("Title: ")
+    priority = ask_priority()
+    if priority is None:
+        print("Priority must be a number")
+        return
+    task = add_task(tasks, title, priority)
+    print("Added:", task)
 
 def main():
     tasks = []
@@ -16,18 +34,7 @@ def main():
         choice = input("Choose: ")
 
         if choice == "1":
-            title = input("Title: ")
-            priority_text = input("Priority (default 1): ")
-            if priority_text == "":
-                priority = 1
-            else:
-                try:
-                    priority = int(priority_text)
-                except ValueError:
-                    print("Priority must be a number")
-                    continue
-            task = add_task(tasks, title, priority)
-            print("Added:", task)
+            handle_add(tasks)
 
         elif choice == "2":
             if len(tasks) == 0:
