@@ -33,6 +33,13 @@ def handle_show(tasks):
     else:
         for task in tasks:
             print(task)
+def handle_delete(tasks):
+    title = input("Title: ")
+    if delete_task(tasks, title):
+        print("Deleted")
+    else:
+        print("Task not found")
+    
 
 def main():
     tasks = []
@@ -54,11 +61,7 @@ def main():
                 print("Task not found")
 
         elif choice == "4":
-            title = input("Title: ")
-            if delete_task(tasks, title):
-                print("Deleted")
-            else:
-                print("Task not found")
+            handle_delete(tasks)
 
         elif choice == "5":
             print("Bye")
