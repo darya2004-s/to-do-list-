@@ -39,7 +39,13 @@ def handle_delete(tasks):
         print("Deleted")
     else:
         print("Task not found")
-    
+def handele_complete(tasks):
+    title = input("Title: ")
+    if complete_task(tasks, title):
+        print("Done")
+    else:
+        print("Task not found")
+     
 
 def main():
     tasks = []
@@ -54,11 +60,8 @@ def main():
             handle_show(tasks)
 
         elif choice == "3":
-            title = input("Title: ")
-            if complete_task(tasks, title):
-                print("Done")
-            else:
-                print("Task not found")
+            handele_complete(tasks)
+
 
         elif choice == "4":
             handle_delete(tasks)
