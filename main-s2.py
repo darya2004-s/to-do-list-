@@ -39,7 +39,7 @@ def handle_delete(tasks):
         print("Deleted")
     else:
         print("Task not found")
-def handele_complete(tasks):
+def handle_complete(tasks):
     title = input("Title: ")
     if complete_task(tasks, title):
         print("Done")
