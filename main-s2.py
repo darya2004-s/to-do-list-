@@ -26,6 +26,13 @@ def handle_add(tasks):
         return
     task = add_task(tasks, title, priority)
     print("Added:", task)
+    
+def handle_show(tasks):
+    if len(tasks) == 0:
+        print("No tasks")
+    else:
+        for task in tasks:
+            print(task)
 
 def main():
     tasks = []
@@ -37,11 +44,7 @@ def main():
             handle_add(tasks)
 
         elif choice == "2":
-            if len(tasks) == 0:
-                print("No tasks")
-            else:
-                for task in tasks:
-                    print(task)
+            handle_show(tasks)
 
         elif choice == "3":
             title = input("Title: ")
