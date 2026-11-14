@@ -60,8 +60,7 @@ def main():
             handle_show(tasks)
 
         elif choice == "3":
-            handele_complete(tasks)
-
+            handle_complete(tasks)
 
         elif choice == "4":
             handle_delete(tasks)
